@@ -14,4 +14,13 @@ class Book extends Model
     public function writer(){
         return $this->hasOne('App\Models\Writer','id','writerId');
     }
+    //gelen giden verilere müdahale edebilriiz.
+    public function getNameAttribute($value){
+        return ucfirst($value);
+    }
+
+    public function setNameAttribute($value){
+        $this->attributes['name']=strtolower($value);
+    }
+
 }

@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Writer extends Model
 {
-    public  function book(){
+    public function book(){
 //       return $this->belongsTo('\App\Models\Book','id','writerId');
         return $this->hasMany('\App\Models\Book','writerId','id');
+    }
+    public function buyABook(){
+        return $this->belongsToMany('\App\Models\BuyABook','books','writerId','id');
     }
 
 }

@@ -21,10 +21,16 @@ Route::get('/', function () {
 use App\Models\Book;
 Route::get('/books',function (){
 
-$x = \App\Models\Writer::find(1)->book;
-foreach ($x as $key=>$value){
-   echo $value['name']."<br/>";
-}
+    $x = \App\Models\User::find(1);
+    echo $x->fullname;
+
+//$x = \App\Models\Book::find(1);
+// $firstname = $x->name;
+// echo $firstname;
+//    Book::create(['name'=>'NEWWWeni kitapp','writerId'=>1]);
+
+
+
 
 
 });
