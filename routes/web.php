@@ -19,28 +19,22 @@ Route::get('/', function () {
     echo "Ana Sayfa";
 });
 use App\Models\Book;
-Route::get('/books',function (){
+//Route::get('/books',function (){
+//
+////    $x = \App\Models\User::find(1);
+////    echo $x->fullname;
+//
+////$x = \App\Models\Book::find(1);
+//// $firstname = $x->name;
+//// echo $firstname;
+////    Book::create(['name'=>'NEWWWeni kitapp','writerId'=>1]);
+//});
 
-    $x = \App\Models\User::find(1);
-    echo $x->fullname;
+Route::resource('book',BookController::class);
 
-//$x = \App\Models\Book::find(1);
-// $firstname = $x->name;
-// echo $firstname;
-//    Book::create(['name'=>'NEWWWeni kitapp','writerId'=>1]);
-
-
-
-
-
-});
-
-
-
-Route::resources([
-    '/user'=> UserController::class,
-    '/book'=>BookController::class,
-]);
+//Route::get('/book',[BookController::class],'index');
+//Route::get('/book/create',[BookController::class],'create');
+//Route::post('book/store',[BookController::class],'store')->name('book.create.post');
 
 use \Illuminate\Support\Facades\DB;
 //Route::get('/books',function (){
@@ -50,3 +44,21 @@ use \Illuminate\Support\Facades\DB;
 ////    }
 //});
 
+
+Auth::routes();
+Route::get('/',function (){
+    return view('auth.register');
+});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

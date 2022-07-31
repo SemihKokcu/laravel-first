@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class BookController extends Controller
 {
@@ -14,7 +15,7 @@ class BookController extends Controller
     public function index()
     {
         $data = ['bookName'=>'Lafontenden Masallar','author'=>'can korkmaz','description'=>'Benim adım can korkmaz ben yalan konuşmam','genre'=>['macera','aşk','bilimkurgu']];
-        return view('bookList',$data);
+        return view('book.bookList',$data);
     }
 
     /**
@@ -24,7 +25,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return  View('book.create');
     }
 
     /**
@@ -35,8 +36,19 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//          $name = $request->input('name');
+//          echo $name;
+//          dd($request->except('_token'));
+
+          $request->validate([
+             'name'=>'required|max:10',
+          ]);
+//        $uri =$request->url();
+//        echo  $uri;
+//        $image = $request->file('image');
+//        dd($image);
     }
+
 
     /**
      * Display the specified resource.
