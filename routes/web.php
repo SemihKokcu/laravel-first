@@ -18,17 +18,11 @@ use \App\Http\Controllers\BookController;
 Route::get('/', function () {
     echo "Ana Sayfa";
 });
-
+use App\Models\Book;
 Route::get('/books',function (){
-   $x = \App\Models\Book::all();
-    $x = \App\Models\Book::orderBy('name','asc')->get();
 
-
-//   dd($x);
-    foreach ($x as $key =>$value)
-    {
-        echo $value['name']."<br/>";
-    }
+$book = Book::firstOrCreate(['name'=>'HarryPoter-6'],['writerId'=>1]);
+dd($book);
 
 });
 
