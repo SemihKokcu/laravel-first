@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     //veri tabanında şema ismi "s" takısı almmamış ise bakması gereken yeri işaretleyebiliriz.
-    protected $table = "book";
+//    protected $table = "books";
 }

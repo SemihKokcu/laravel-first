@@ -19,6 +19,20 @@ Route::get('/', function () {
     echo "Ana Sayfa";
 });
 
+Route::get('/books',function (){
+   $x = \App\Models\Book::all();
+    $x = \App\Models\Book::orderBy('name','asc')->get();
+
+
+//   dd($x);
+    foreach ($x as $key =>$value)
+    {
+        echo $value['name']."<br/>";
+    }
+
+});
+
+
 
 Route::resources([
     '/user'=> UserController::class,
