@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    protected  $changes = "books";
+    protected  $table = "books";
     protected  $guarded = [];
     public  $timestamps = false;
+
+    public function writer(){
+        return $this->hasOne('App\Models\Writer','id','writerId');
+    }
 }

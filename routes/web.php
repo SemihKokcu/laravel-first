@@ -21,8 +21,11 @@ Route::get('/', function () {
 use App\Models\Book;
 Route::get('/books',function (){
 
-$book = Book::firstOrCreate(['name'=>'HarryPoter-6'],['writerId'=>1]);
-dd($book);
+$x = \App\Models\Writer::find(1)->book;
+foreach ($x as $key=>$value){
+   echo $value['name']."<br/>";
+}
+
 
 });
 

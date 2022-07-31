@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Writer extends Model
 {
-    use HasFactory;
+    public  function book(){
+//       return $this->belongsTo('\App\Models\Book','id','writerId');
+        return $this->hasMany('\App\Models\Book','writerId','id');
+    }
+
 }
