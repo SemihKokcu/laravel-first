@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Publisher extends Model
 {
-    use HasFactory;
+    //gelen her şeyi kabul etmesi için
+    protected $guarded = [];
 }

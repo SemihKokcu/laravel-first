@@ -11,23 +11,23 @@
                     @endif
                     <div class="card">
                         <div class="card-header" data-background-color="purple">
-                            <h4 class="title">Yayın Evleri</h4>
-                            <p class="category">Yayın Evleri Listesi</p>
+                            <h4 class="title">Yazarlar</h4>
+                            <p class="category">Yazarların Listesi</p>
                         </div>
                         <div class="card-content table-responsive">
                             <table class="table">
                                 <thead class="text-primary">
-                                <tr><th>Yayın Evleri</th>
+                                <tr><th>Yazarlar</th>
                                     <th></th>
                                     <th></th>
                                 </tr></thead>
                                 <tbody>
                                 @foreach($data as $key =>$value)
-                                <tr>
-                                    <td>{{$value['name']}}</td>
-                                    <td><a href="{{route('admin.publisher.edit',['id'=>$value['id']])}}">Düzenle</a></td>
-                                    <td><a href="{{route('admin.publisher.delete',['id'=>$value['id']])}}">Sil</a></td>
-                                </tr>
+                                    <tr>
+                                        <td>{{$value['name']}}</td>
+                                        <td><a href="{{route('admin.author.edit',['id'=>$value['id']])}}">Düzenle</a></td>
+                                        <td><a href="{{route('admin.author.delete',['id'=>$value['id']])}}">Sil</a></td>
+                                    </tr>
                                 @endforeach
                                 </tbody>
                             </table>
@@ -39,4 +39,4 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
